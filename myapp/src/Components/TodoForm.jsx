@@ -104,52 +104,52 @@ const TodoForm = () => {
   return (
     <div className="todo-container">
       <div className="todo-content">
-    <div className="todo-form-container">
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter todo text"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          className="todo-input"
-        />
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleImage}
-          className="todo-file-input"
-        />
-        <button type="submit" className="todo-submit-button">Add Todo</button>
-      </form>
-      <div className="todo-list-container">
-        <h2>Todo List</h2>
-        <ul className="todo-list">
-          {todos.map((todo, index) => (
-            <li key={index} className="todo-item">
-              {editMode === todo.todoId ? (
-                <textarea
-                  value={editText}
-                  onChange={(e) => setEditText(e.target.value)}
-                  className="todo-edit-textarea"
-                />
-              ) : (
-                <span>{todo.text}</span>
-              )}
-              {todo.imageKey && (
-                <img src={`https://todo0506.s3.amazonaws.com/${todo.imageKey}`} alt="Todo Image" className="todo-image" />
-              )}
-              <button onClick={() => handleDelete(todo.todoId)} className="todo-delete-button">Delete</button>
-              {editMode === todo.todoId ? (
-                <button onClick={handleSaveEdit} className="todo-save-button">Save</button>
-              ) : (
-                <button onClick={() => handleEdit(todo.todoId)} className="todo-edit-button">Edit</button>
-              )}
-            </li>
-          ))}
-        </ul>
+        <div className="todo-form-container">
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Enter todo text"
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              className="todo-input"
+            />
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleImage}
+              className="todo-file-input"
+            />
+            <button type="submit" className="todo-submit-button">Add Todo</button>
+          </form>
+        </div>
+        <div className="todo-list-container">
+          <h2>Todo List</h2>
+          <ul className="todo-list">
+            {todos.map((todo, index) => (
+              <li key={index} className="todo-item">
+                {todo.imageKey && (
+                  <img src={`https://todo0506.s3.amazonaws.com/${todo.imageKey}`} alt="Todo Image" className="todo-image" />
+                )}
+                {editMode === todo.todoId ? (
+                  <textarea
+                    value={editText}
+                    onChange={(e) => setEditText(e.target.value)}
+                    className="todo-edit-textarea"
+                  />
+                ) : (
+                  <span>{todo.text}</span>
+                )}
+                <button onClick={() => handleDelete(todo.todoId)} className="todo-delete-button">Delete</button>
+                {editMode === todo.todoId ? (
+                  <button onClick={handleSaveEdit} className="todo-save-button">Save</button>
+                ) : (
+                  <button onClick={() => handleEdit(todo.todoId)} className="todo-edit-button">Edit</button>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
-    </div>
     </div>
   );
 };

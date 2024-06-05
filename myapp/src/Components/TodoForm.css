@@ -1,0 +1,80 @@
+.todo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .todo-content {
+    border: 1px solid #ccc; /* Add border */
+    padding: 20px; /* Add padding */
+  }
+  
+  .todo-form-container {
+    margin-right: 20px; /* Add space between form and todo list */
+  }
+  
+  .todo-form-container,
+  .todo-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .todo-input {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 300px;
+  }
+  
+  .todo-file-input {
+    margin-bottom: 10px;
+  }
+  
+  .todo-submit-button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .todo-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .todo-item {
+    margin-bottom: 10px;
+  }
+  
+  .todo-edit-textarea {
+    margin-bottom: 10px;
+    width: 100%;
+    min-height: 50px;
+  }
+  
+  .todo-image {
+    margin-right: 10px;
+    max-width: 100px;
+  }
+  
+  .todo-delete-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .todo-edit-button,
+  .todo-save-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
